@@ -1,0 +1,508 @@
+2019-11-12 15:08:40,026 - db.log - ERROR - ========================***========================
+2019-11-12 15:08:40,026 - db.log - ERROR - ========================***========================
+2019-11-12 15:08:40,026 - db.log - ERROR - error info: 'NoneType' object is not iterable
+2019-11-12 15:08:40,026 - db.log - ERROR - error info: 'NoneType' object is not iterable
+2019-11-12 22:07:50,417 - db.log - ERROR - ========================***========================
+2019-11-12 22:07:50,417 - db.log - ERROR - ========================***========================
+2019-11-12 22:07:50,418 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:07:50,418 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:09:23,136 - db.log - ERROR - ========================***========================
+2019-11-12 22:09:23,136 - db.log - ERROR - ========================***========================
+2019-11-12 22:09:23,136 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:09:23,136 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:11:58,215 - db.log - ERROR - ========================***========================
+2019-11-12 22:11:58,215 - db.log - ERROR - ========================***========================
+2019-11-12 22:11:58,215 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:11:58,215 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:11:58,215 - db.log - ERROR - error at process_quarterly_data: HNX-INDEX
+2019-11-12 22:11:58,215 - db.log - ERROR - error at process_quarterly_data: HNX-INDEX
+2019-11-12 22:11:58,216 - db.log - ERROR - ========================***========================
+2019-11-12 22:11:58,216 - db.log - ERROR - ========================***========================
+2019-11-12 22:11:58,632 - db.log - ERROR - ========================***========================
+2019-11-12 22:11:58,632 - db.log - ERROR - ========================***========================
+2019-11-12 22:11:58,632 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:11:58,632 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:11:58,633 - db.log - ERROR - error at process_quarterly_data: HNX30- INDEX
+2019-11-12 22:11:58,633 - db.log - ERROR - error at process_quarterly_data: HNX30- INDEX
+2019-11-12 22:11:58,633 - db.log - ERROR - ========================***========================
+2019-11-12 22:11:58,633 - db.log - ERROR - ========================***========================
+2019-11-12 22:11:59,070 - db.log - ERROR - ========================***========================
+2019-11-12 22:11:59,070 - db.log - ERROR - ========================***========================
+2019-11-12 22:11:59,070 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:11:59,070 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:11:59,071 - db.log - ERROR - error at process_quarterly_data: HOSTC
+2019-11-12 22:11:59,071 - db.log - ERROR - error at process_quarterly_data: HOSTC
+2019-11-12 22:11:59,071 - db.log - ERROR - ========================***========================
+2019-11-12 22:11:59,071 - db.log - ERROR - ========================***========================
+2019-11-12 22:11:59,465 - db.log - ERROR - ========================***========================
+2019-11-12 22:11:59,465 - db.log - ERROR - ========================***========================
+2019-11-12 22:11:59,465 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:11:59,465 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:11:59,465 - db.log - ERROR - error at process_quarterly_data: VN30-INDEX
+2019-11-12 22:11:59,465 - db.log - ERROR - error at process_quarterly_data: VN30-INDEX
+2019-11-12 22:11:59,466 - db.log - ERROR - ========================***========================
+2019-11-12 22:11:59,466 - db.log - ERROR - ========================***========================
+2019-11-12 22:11:59,863 - db.log - ERROR - ========================***========================
+2019-11-12 22:11:59,863 - db.log - ERROR - ========================***========================
+2019-11-12 22:11:59,864 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:11:59,864 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:11:59,864 - db.log - ERROR - error at process_quarterly_data: UPCOM
+2019-11-12 22:11:59,864 - db.log - ERROR - error at process_quarterly_data: UPCOM
+2019-11-12 22:11:59,864 - db.log - ERROR - ========================***========================
+2019-11-12 22:11:59,864 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:00,241 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:00,241 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:00,242 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:00,242 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:00,242 - db.log - ERROR - error at process_quarterly_data: VNXALLShare
+2019-11-12 22:12:00,242 - db.log - ERROR - error at process_quarterly_data: VNXALLShare
+2019-11-12 22:12:00,242 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:00,242 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:00,616 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:00,616 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:00,617 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:00,617 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:00,617 - db.log - ERROR - error at process_quarterly_data: A32
+2019-11-12 22:12:00,617 - db.log - ERROR - error at process_quarterly_data: A32
+2019-11-12 22:12:00,618 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:00,618 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:01,084 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:01,084 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:01,085 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:01,085 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:01,085 - db.log - ERROR - error at process_quarterly_data: AAA
+2019-11-12 22:12:01,085 - db.log - ERROR - error at process_quarterly_data: AAA
+2019-11-12 22:12:01,086 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:01,086 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:01,546 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:01,546 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:01,546 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:01,546 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:01,547 - db.log - ERROR - error at process_quarterly_data: AAM
+2019-11-12 22:12:01,547 - db.log - ERROR - error at process_quarterly_data: AAM
+2019-11-12 22:12:01,547 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:01,547 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:02,004 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:02,004 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:02,005 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:02,005 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:02,005 - db.log - ERROR - error at process_quarterly_data: AAV
+2019-11-12 22:12:02,005 - db.log - ERROR - error at process_quarterly_data: AAV
+2019-11-12 22:12:02,005 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:02,005 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:02,470 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:02,470 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:02,470 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:02,470 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:02,471 - db.log - ERROR - error at process_quarterly_data: ABC
+2019-11-12 22:12:02,471 - db.log - ERROR - error at process_quarterly_data: ABC
+2019-11-12 22:12:02,471 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:02,471 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:02,920 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:02,920 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:02,921 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:02,921 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:02,921 - db.log - ERROR - error at process_quarterly_data: ABI
+2019-11-12 22:12:02,921 - db.log - ERROR - error at process_quarterly_data: ABI
+2019-11-12 22:12:02,921 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:02,921 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:03,412 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:03,412 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:03,412 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:03,412 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:03,413 - db.log - ERROR - error at process_quarterly_data: ABR
+2019-11-12 22:12:03,413 - db.log - ERROR - error at process_quarterly_data: ABR
+2019-11-12 22:12:03,413 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:03,413 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:03,845 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:03,845 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:03,845 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:03,845 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:03,845 - db.log - ERROR - error at process_quarterly_data: ABT
+2019-11-12 22:12:03,845 - db.log - ERROR - error at process_quarterly_data: ABT
+2019-11-12 22:12:03,845 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:03,845 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:04,415 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:04,415 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:04,416 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:04,416 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:04,416 - db.log - ERROR - error at process_quarterly_data: AC4
+2019-11-12 22:12:04,416 - db.log - ERROR - error at process_quarterly_data: AC4
+2019-11-12 22:12:04,417 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:04,417 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:04,885 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:04,885 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:04,886 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:04,886 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:04,886 - db.log - ERROR - error at process_quarterly_data: ACB
+2019-11-12 22:12:04,886 - db.log - ERROR - error at process_quarterly_data: ACB
+2019-11-12 22:12:04,886 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:04,886 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:05,354 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:05,354 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:05,355 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:05,355 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:05,355 - db.log - ERROR - error at process_quarterly_data: ACC
+2019-11-12 22:12:05,355 - db.log - ERROR - error at process_quarterly_data: ACC
+2019-11-12 22:12:05,355 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:05,355 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:05,793 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:05,793 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:05,793 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:05,793 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:05,794 - db.log - ERROR - error at process_quarterly_data: ACE
+2019-11-12 22:12:05,794 - db.log - ERROR - error at process_quarterly_data: ACE
+2019-11-12 22:12:05,794 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:05,794 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:06,270 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:06,270 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:06,271 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:06,271 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:06,271 - db.log - ERROR - error at process_quarterly_data: ACL
+2019-11-12 22:12:06,271 - db.log - ERROR - error at process_quarterly_data: ACL
+2019-11-12 22:12:06,271 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:06,271 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:06,724 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:06,724 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:06,724 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:06,724 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:06,725 - db.log - ERROR - error at process_quarterly_data: ACM
+2019-11-12 22:12:06,725 - db.log - ERROR - error at process_quarterly_data: ACM
+2019-11-12 22:12:06,725 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:06,725 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:07,265 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:07,265 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:07,266 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:07,266 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:07,266 - db.log - ERROR - error at process_quarterly_data: ACS
+2019-11-12 22:12:07,266 - db.log - ERROR - error at process_quarterly_data: ACS
+2019-11-12 22:12:07,266 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:07,266 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:07,760 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:07,760 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:07,760 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:07,760 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:07,760 - db.log - ERROR - error at process_quarterly_data: ACV
+2019-11-12 22:12:07,760 - db.log - ERROR - error at process_quarterly_data: ACV
+2019-11-12 22:12:07,761 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:07,761 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:08,258 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:08,258 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:08,258 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:08,258 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:08,259 - db.log - ERROR - error at process_quarterly_data: ADC
+2019-11-12 22:12:08,259 - db.log - ERROR - error at process_quarterly_data: ADC
+2019-11-12 22:12:08,259 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:08,259 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:08,756 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:08,756 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:08,757 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:08,757 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:08,758 - db.log - ERROR - error at process_quarterly_data: ADP
+2019-11-12 22:12:08,758 - db.log - ERROR - error at process_quarterly_data: ADP
+2019-11-12 22:12:08,758 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:08,758 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:09,209 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:09,209 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:09,209 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:09,209 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:09,209 - db.log - ERROR - error at process_quarterly_data: ADS
+2019-11-12 22:12:09,209 - db.log - ERROR - error at process_quarterly_data: ADS
+2019-11-12 22:12:09,210 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:09,210 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:09,640 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:09,640 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:09,641 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:09,641 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:09,641 - db.log - ERROR - error at process_quarterly_data: AFC
+2019-11-12 22:12:09,641 - db.log - ERROR - error at process_quarterly_data: AFC
+2019-11-12 22:12:09,641 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:09,641 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:10,170 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:10,170 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:10,171 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:10,171 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:10,171 - db.log - ERROR - error at process_quarterly_data: AFX
+2019-11-12 22:12:10,171 - db.log - ERROR - error at process_quarterly_data: AFX
+2019-11-12 22:12:10,171 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:10,171 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:10,735 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:10,735 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:10,736 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:10,736 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:10,736 - db.log - ERROR - error at process_quarterly_data: AG1
+2019-11-12 22:12:10,736 - db.log - ERROR - error at process_quarterly_data: AG1
+2019-11-12 22:12:10,736 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:10,736 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:11,246 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:11,246 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:11,247 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:11,247 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:11,247 - db.log - ERROR - error at process_quarterly_data: AGF
+2019-11-12 22:12:11,247 - db.log - ERROR - error at process_quarterly_data: AGF
+2019-11-12 22:12:11,248 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:11,248 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:11,735 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:11,735 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:11,735 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:11,735 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:11,735 - db.log - ERROR - error at process_quarterly_data: AGM
+2019-11-12 22:12:11,735 - db.log - ERROR - error at process_quarterly_data: AGM
+2019-11-12 22:12:11,736 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:11,736 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:12,178 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:12,178 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:12,179 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:12,179 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:12,179 - db.log - ERROR - error at process_quarterly_data: AGP
+2019-11-12 22:12:12,179 - db.log - ERROR - error at process_quarterly_data: AGP
+2019-11-12 22:12:12,180 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:12,180 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:12,664 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:12,664 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:12,664 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:12,664 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:12,665 - db.log - ERROR - error at process_quarterly_data: AGR
+2019-11-12 22:12:12,665 - db.log - ERROR - error at process_quarterly_data: AGR
+2019-11-12 22:12:12,665 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:12,665 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:13,145 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:13,145 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:13,145 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:13,145 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:13,145 - db.log - ERROR - error at process_quarterly_data: AGX
+2019-11-12 22:12:13,145 - db.log - ERROR - error at process_quarterly_data: AGX
+2019-11-12 22:12:13,146 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:13,146 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:13,660 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:13,660 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:13,660 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:13,660 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:13,661 - db.log - ERROR - error at process_quarterly_data: ALT
+2019-11-12 22:12:13,661 - db.log - ERROR - error at process_quarterly_data: ALT
+2019-11-12 22:12:13,661 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:13,661 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:14,203 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:14,203 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:14,204 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:14,204 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:14,204 - db.log - ERROR - error at process_quarterly_data: ALV
+2019-11-12 22:12:14,204 - db.log - ERROR - error at process_quarterly_data: ALV
+2019-11-12 22:12:14,204 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:14,204 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:14,670 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:14,670 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:14,670 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:14,670 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:14,671 - db.log - ERROR - error at process_quarterly_data: AMC
+2019-11-12 22:12:14,671 - db.log - ERROR - error at process_quarterly_data: AMC
+2019-11-12 22:12:14,671 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:14,671 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:15,204 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:15,204 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:15,205 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:15,205 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:15,205 - db.log - ERROR - error at process_quarterly_data: AMD
+2019-11-12 22:12:15,205 - db.log - ERROR - error at process_quarterly_data: AMD
+2019-11-12 22:12:15,205 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:15,205 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:15,648 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:15,648 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:15,649 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:15,649 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:15,649 - db.log - ERROR - error at process_quarterly_data: AME
+2019-11-12 22:12:15,649 - db.log - ERROR - error at process_quarterly_data: AME
+2019-11-12 22:12:15,649 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:15,649 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:16,080 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:16,080 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:16,080 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:16,080 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:16,080 - db.log - ERROR - error at process_quarterly_data: AMP
+2019-11-12 22:12:16,080 - db.log - ERROR - error at process_quarterly_data: AMP
+2019-11-12 22:12:16,081 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:16,081 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:16,518 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:16,518 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:16,520 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:16,520 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:16,524 - db.log - ERROR - error at process_quarterly_data: AMS
+2019-11-12 22:12:16,524 - db.log - ERROR - error at process_quarterly_data: AMS
+2019-11-12 22:12:16,525 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:16,525 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:16,977 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:16,977 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:16,978 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:16,978 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:16,978 - db.log - ERROR - error at process_quarterly_data: AMV
+2019-11-12 22:12:16,978 - db.log - ERROR - error at process_quarterly_data: AMV
+2019-11-12 22:12:16,979 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:16,979 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:17,417 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:17,417 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:17,417 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:17,417 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:17,418 - db.log - ERROR - error at process_quarterly_data: ANT
+2019-11-12 22:12:17,418 - db.log - ERROR - error at process_quarterly_data: ANT
+2019-11-12 22:12:17,418 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:17,418 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:17,890 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:17,890 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:17,891 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:17,891 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:17,892 - db.log - ERROR - error at process_quarterly_data: ANV
+2019-11-12 22:12:17,892 - db.log - ERROR - error at process_quarterly_data: ANV
+2019-11-12 22:12:17,892 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:17,892 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:18,346 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:18,346 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:18,346 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:18,346 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:18,346 - db.log - ERROR - error at process_quarterly_data: APC
+2019-11-12 22:12:18,346 - db.log - ERROR - error at process_quarterly_data: APC
+2019-11-12 22:12:18,346 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:18,346 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:18,889 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:18,889 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:18,890 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:18,890 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:18,890 - db.log - ERROR - error at process_quarterly_data: APF
+2019-11-12 22:12:18,890 - db.log - ERROR - error at process_quarterly_data: APF
+2019-11-12 22:12:18,891 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:18,891 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:19,348 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:19,348 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:19,348 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:19,348 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:19,349 - db.log - ERROR - error at process_quarterly_data: APG
+2019-11-12 22:12:19,349 - db.log - ERROR - error at process_quarterly_data: APG
+2019-11-12 22:12:19,349 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:19,349 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:19,806 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:19,806 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:19,807 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:19,807 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:19,807 - db.log - ERROR - error at process_quarterly_data: API
+2019-11-12 22:12:19,807 - db.log - ERROR - error at process_quarterly_data: API
+2019-11-12 22:12:19,807 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:19,807 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:20,239 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:20,239 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:20,240 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:20,240 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:20,240 - db.log - ERROR - error at process_quarterly_data: APL
+2019-11-12 22:12:20,240 - db.log - ERROR - error at process_quarterly_data: APL
+2019-11-12 22:12:20,240 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:20,240 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:20,704 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:20,704 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:20,705 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:20,705 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:20,706 - db.log - ERROR - error at process_quarterly_data: APP
+2019-11-12 22:12:20,706 - db.log - ERROR - error at process_quarterly_data: APP
+2019-11-12 22:12:20,706 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:20,706 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:21,197 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:21,197 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:21,198 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:21,198 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:21,198 - db.log - ERROR - error at process_quarterly_data: APS
+2019-11-12 22:12:21,198 - db.log - ERROR - error at process_quarterly_data: APS
+2019-11-12 22:12:21,199 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:21,199 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:21,670 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:21,670 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:21,670 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:21,670 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:21,671 - db.log - ERROR - error at process_quarterly_data: APT
+2019-11-12 22:12:21,671 - db.log - ERROR - error at process_quarterly_data: APT
+2019-11-12 22:12:21,671 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:21,671 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:22,093 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:22,093 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:22,093 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:22,093 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:22,093 - db.log - ERROR - error at process_quarterly_data: AQN
+2019-11-12 22:12:22,093 - db.log - ERROR - error at process_quarterly_data: AQN
+2019-11-12 22:12:22,094 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:22,094 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:22,601 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:22,601 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:22,601 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:22,601 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:22,602 - db.log - ERROR - error at process_quarterly_data: ARM
+2019-11-12 22:12:22,602 - db.log - ERROR - error at process_quarterly_data: ARM
+2019-11-12 22:12:22,602 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:22,602 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:23,045 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:23,045 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:23,045 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:23,045 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:23,046 - db.log - ERROR - error at process_quarterly_data: ART
+2019-11-12 22:12:23,046 - db.log - ERROR - error at process_quarterly_data: ART
+2019-11-12 22:12:23,046 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:23,046 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:23,509 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:23,509 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:23,510 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:23,510 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:23,510 - db.log - ERROR - error at process_quarterly_data: ASA
+2019-11-12 22:12:23,510 - db.log - ERROR - error at process_quarterly_data: ASA
+2019-11-12 22:12:23,510 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:23,510 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:23,987 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:23,987 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:23,988 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:23,988 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:23,989 - db.log - ERROR - error at process_quarterly_data: ASD
+2019-11-12 22:12:23,989 - db.log - ERROR - error at process_quarterly_data: ASD
+2019-11-12 22:12:23,990 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:23,990 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:24,467 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:24,467 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:24,467 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:24,467 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:24,468 - db.log - ERROR - error at process_quarterly_data: ASM
+2019-11-12 22:12:24,468 - db.log - ERROR - error at process_quarterly_data: ASM
+2019-11-12 22:12:24,468 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:24,468 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:24,926 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:24,926 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:24,927 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:24,927 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:24,927 - db.log - ERROR - error at process_quarterly_data: ASP
+2019-11-12 22:12:24,927 - db.log - ERROR - error at process_quarterly_data: ASP
+2019-11-12 22:12:24,927 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:24,927 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:25,379 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:25,379 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:25,379 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:25,379 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:25,380 - db.log - ERROR - error at process_quarterly_data: AST
+2019-11-12 22:12:25,380 - db.log - ERROR - error at process_quarterly_data: AST
+2019-11-12 22:12:25,380 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:25,380 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:25,807 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:25,807 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:25,808 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:25,808 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:25,808 - db.log - ERROR - error at process_quarterly_data: ATA
+2019-11-12 22:12:25,808 - db.log - ERROR - error at process_quarterly_data: ATA
+2019-11-12 22:12:25,808 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:25,808 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:26,268 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:26,268 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:26,269 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:26,269 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:26,269 - db.log - ERROR - error at process_quarterly_data: ATB
+2019-11-12 22:12:26,269 - db.log - ERROR - error at process_quarterly_data: ATB
+2019-11-12 22:12:26,269 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:26,269 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:26,777 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:26,777 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:26,778 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:26,778 - db.log - ERROR - error info: 'float' object cannot be interpreted as an integer
+2019-11-12 22:12:26,779 - db.log - ERROR - error at process_quarterly_data: ATD
+2019-11-12 22:12:26,779 - db.log - ERROR - error at process_quarterly_data: ATD
+2019-11-12 22:12:26,779 - db.log - ERROR - ========================***========================
+2019-11-12 22:12:26,779 - db.log - ERROR - ========================***========================

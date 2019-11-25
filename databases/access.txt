@@ -1,0 +1,4 @@
+user:root
+password:tuan1412
+database:algo_trading_data
+host:localhost
