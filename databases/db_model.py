@@ -21,17 +21,21 @@ class HistoricalData(Base):
     high = Column(DECIMAL(20, 4), nullable=True)
     low = Column(DECIMAL(20, 4), nullable=True)
     close = Column(DECIMAL(20, 4), nullable=True)
-    volume = Column(DECIMAL(20, 0), nullable=True)
+    deal_volume = Column(DECIMAL(20, 0), nullable=True)
+    put_through_volume = Column(DECIMAL(20, 0), nullable=True)
+    total_volume = Column(DECIMAL(20, 0), nullable=True)
     last_update = Column(Date, nullable=False)
 
-    def __init__(self, sec_id, date, open, high, low, close, volume, last_update):
+    def __init__(self, sec_id, date, open, high, low, close, deal_volume, put_through_volume, total_volume, last_update):
         self.sec_id = sec_id
         self.date = date
         self.open = open
         self.high = high
         self.low = low
         self.close = close
-        self.volume = volume
+        self.deal_volume = deal_volume
+        self.put_through_volume = put_through_volume
+        self.total_volume = total_volume
         self.last_update = last_update
 
 

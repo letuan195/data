@@ -1,6 +1,6 @@
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import asc, or_
+from sqlalchemy import desc, or_
 
 import os
 import sys
@@ -41,6 +41,22 @@ def insert_list_object(list_object):
         session.rollback()
     finally:
         session.close()
+
+
+def get_last_daily_data(sec_id):
+    session = DBSession()
+    try:
+        query = session.query(DailyData).filter_by(sec_id=sec_id).order_by(desc(DailyData.date)).limit(1)
+        records = query.all()
+    except Exception as e:
+        error('========================***========================')
+        error('error info: %s' % str(e))
+        error('error at check_record_historical')
+        error('========================***========================')
+        records = []
+    finally:
+        session.close()
+    return records
 
 
 def check_record_historical(sec_id, date):
@@ -106,6 +122,7 @@ def check_record_yearly(sec_id, year):
         session.close()
     return records
 
+
 def check_record_business_plane(sec_id, year):
     session = DBSession()
     try:
@@ -141,14 +158,17 @@ def get_all_security():
     return records
 
 
-# def update_daily_data():
-#     session = DBSession()
-#     try:
-#         session.query(DailyData).update()
-#         session.commit()
-#     except Exception as e:
-#         error('error at update_daily_data object')
-#         error('error info: %s' % str(e))
-#         session.rollback()
-#     finally:
-#         session.close()
+def update_adj_price_data(sec_id, date, close, price_open, high, low):
+    session = DBSession()
+    try:
+        session.query(HistoricalData) \
+            .filter(HistoricalData.sec_id == sec_id) \
+            .filter(HistoricalData.date == date). \
+            update({"close": close, "open": price_open, "high": high, "low": low})
+        session.commit()
+    except Exception as e:
+        error('error at update_adj_price_data object')
+        error('error info: %s' % str(e))
+        session.rollback()
+    finally:
+        session.close()
