@@ -133,7 +133,7 @@ def get_yearly_data(sec_id, year):
     return records
 
 
-def get_business_plane(sec_id, year):
+def get_business_plan(sec_id, year):
     session = DBSession()
     try:
         query = session.query(BusinessPlanData).filter_by(sec_id=sec_id, year=year)
