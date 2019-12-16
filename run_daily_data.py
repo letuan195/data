@@ -11,9 +11,9 @@ import win32service
 
 class SMWinservice(win32serviceutil.ServiceFramework):
     '''Base class to create winservice in Python'''
-    _svc_name_ = 'xxxService'
-    _svc_display_name_ = 'Python Service'
-    _svc_description_ = 'Python Service Description'
+    _svc_name_ = 'pyDaily Data Service'
+    _svc_display_name_ = 'Python Daily Data'
+    _svc_description_ = 'Get data from fireant by python'
 
     @classmethod
     def parse_command_line(cls):
@@ -63,7 +63,7 @@ class SMWinservice(win32serviceutil.ServiceFramework):
 
     def main(self):
         # daily_data.run()
-        schedule.every().day.at("14:48").do(daily_data.run)
+        schedule.every().day.at("17:00").do(daily_data.run)
         while True:
             schedule.run_pending()
             time.sleep(1)

@@ -115,11 +115,11 @@ def process_daily_data(sec_id, symbol, start_date, end_date):
             else:
                 info("Exist record in table historical_data with stock: {0}\t date: {1}".format(symbol, fn_date))
 
-            # records = get_lastest_tick_data(sec_id, fn_date)
-            # if len(records) == 0:
-            #     insert_object(lastest_tick_data)
-            # else:
-            #     update_lastest_tick_data(sec_id, fn_date, price_close, deal_volume, datetime.datetime.now())
+            records = get_lastest_tick_data(sec_id, fn_date)
+            if len(records) == 0:
+                insert_object(lastest_tick_data)
+            else:
+                update_lastest_tick_data(sec_id, fn_date, price_close, deal_volume, datetime.datetime.now())
 
         insert_list_object(historical_datas)
         insert_list_object(daily_datas)
