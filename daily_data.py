@@ -162,7 +162,7 @@ def run():
             symbol = 'VNXALL'
         time.sleep(0.2)
 
-        records = get_last_historical_data(sec_id)
+        records = get_last_daily_data(sec_id)
         if len(records) == 0:
             last_date_record = datetime.datetime.strptime("2008-01-01", "%Y-%m-%d").date()
         else:
@@ -176,3 +176,6 @@ def run():
 
     print('Done!')
     signup.close()
+
+if __name__ == '__main__':
+    run()
