@@ -2,13 +2,7 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import desc, or_
 
-import os
-import sys
-
-BASER_DIR = os.path.abspath(os.path.dirname(__file__))
-sys.path.append(BASER_DIR)
-
-from db_model import get_engine, Security, QuarterlyData, YearlyData, DailyData, HistoricalData, BusinessPlanData
+from db_model import get_engine, Security, QuarterlyData, YearlyData, DailyData, HistoricalData, BusinessPlanData, LastestTickData
 from db_log import error
 
 Base = declarative_base()
@@ -59,7 +53,23 @@ def get_last_daily_data(sec_id):
     return records
 
 
-def check_record_historical(sec_id, date):
+def get_last_historical_data(sec_id):
+    session = DBSession()
+    try:
+        query = session.query(HistoricalData).filter_by(sec_id=sec_id).order_by(desc(HistoricalData.date)).limit(1)
+        records = query.all()
+    except Exception as e:
+        error('========================***========================')
+        error('error info: %s' % str(e))
+        error('error at get_last_historical_data')
+        error('========================***========================')
+        records = []
+    finally:
+        session.close()
+    return records
+
+
+def get_historical_data(sec_id, date):
     session = DBSession()
     try:
         query = session.query(HistoricalData).filter_by(sec_id=sec_id, date=date)
@@ -75,7 +85,7 @@ def check_record_historical(sec_id, date):
     return records
 
 
-def check_record_daily(sec_id, date):
+def get_daily_data(sec_id, date):
     session = DBSession()
     try:
         query = session.query(DailyData).filter_by(sec_id=sec_id, date=date)
@@ -91,7 +101,7 @@ def check_record_daily(sec_id, date):
     return records
 
 
-def check_record_quarterly(sec_id, year, quarter):
+def get_quarterly_data(sec_id, year, quarter):
     session = DBSession()
     try:
         query = session.query(QuarterlyData).filter_by(sec_id=sec_id, year=year, quarter=quarter)
@@ -107,7 +117,7 @@ def check_record_quarterly(sec_id, year, quarter):
     return records
 
 
-def check_record_yearly(sec_id, year):
+def get_yearly_data(sec_id, year):
     session = DBSession()
     try:
         query = session.query(YearlyData).filter_by(sec_id=sec_id, year=year)
@@ -123,7 +133,7 @@ def check_record_yearly(sec_id, year):
     return records
 
 
-def check_record_business_plane(sec_id, year):
+def get_business_plane(sec_id, year):
     session = DBSession()
     try:
         query = session.query(BusinessPlanData).filter_by(sec_id=sec_id, year=year)
@@ -132,6 +142,21 @@ def check_record_business_plane(sec_id, year):
         error('========================***========================')
         error('error info: %s' % str(e))
         error('error at check_record_business_plane')
+        error('========================***========================')
+        records = []
+    finally:
+        session.close()
+    return records
+
+def get_lastest_tick_data(sec_id, trading_date):
+    session = DBSession()
+    try:
+        query = session.query(LastestTickData).filter_by(sec_id=sec_id, trading_date=trading_date)
+        records = query.all()
+    except Exception as e:
+        error('========================***========================')
+        error('error info: %s' % str(e))
+        error('error at get_lastest_tick_data')
         error('========================***========================')
         records = []
     finally:
@@ -164,10 +189,26 @@ def update_adj_price_data(sec_id, date, close, price_open, high, low):
         session.query(HistoricalData) \
             .filter(HistoricalData.sec_id == sec_id) \
             .filter(HistoricalData.date == date). \
-            update({"close": close, "open": price_open, "high": high, "low": low})
+            update({"adj_close": close, "adj_open": price_open, "adj_high": high, "adj_low": low})
         session.commit()
     except Exception as e:
         error('error at update_adj_price_data object')
+        error('error info: %s' % str(e))
+        session.rollback()
+    finally:
+        session.close()
+
+
+def update_lastest_tick_data(sec_id, trading_date, trading_price, total_volume, last_update):
+    session = DBSession()
+    try:
+        session.query(LastestTickData) \
+            .filter(LastestTickData.sec_id == sec_id) \
+            .filter(LastestTickData.trading_date == trading_date). \
+            update({"trading_price": trading_price, "total_volume": total_volume, "last_update": last_update})
+        session.commit()
+    except Exception as e:
+        error('error at update_lastest_tick_data object')
         error('error info: %s' % str(e))
         session.rollback()
     finally:

@@ -1,13 +1,20 @@
 import requests
 import json
 import time
-import os
 import datetime
+
+import sys
+import os
+BASER_DIR = os.path.abspath(os.path.dirname(__file__))
+sys.path.append(BASER_DIR)
+DATABASE_DIR = os.path.join(BASER_DIR, "databases")
+sys.path.append(DATABASE_DIR)
 
 from login import Login
 from databases.db_log import error, info
-from databases.db_session import get_last_daily_data, get_all_security, insert_list_object, check_record_historical, check_record_daily
-from databases.db_session import update_adj_price_data
+from databases.db_session import get_last_daily_data, get_all_security, get_historical_data, get_daily_data, get_lastest_tick_data
+from databases.db_session import insert_object, insert_list_object
+from databases.db_session import update_adj_price_data, update_lastest_tick_data, get_last_historical_data
 from databases.db_model import HistoricalData, DailyData, LastestTickData
 
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
@@ -57,7 +64,6 @@ def process_daily_data(sec_id, symbol, start_date, end_date):
         data_inventory = json.loads(response_inventory.text)
         historical_datas = []
         daily_datas = []
-        lastest_tick_datas = []
         is_adj = False
         for item in data:
             date = item.get("Date")
@@ -97,15 +103,26 @@ def process_daily_data(sec_id, symbol, start_date, end_date):
                                    market_cap, state_ownership, foreign_ownership, other_ownership)
             lastest_tick_data = LastestTickData(sec_id, fn_date, price_close / 1000, deal_volume, datetime.datetime.now())
 
-            # records = check_record_daily(sec_id, fn_date)
+            records = get_daily_data(sec_id, fn_date)
+            if len(records) == 0:
+                daily_datas.append(daily_data)
+            else:
+                info("Exist record in table daily_data with stock: {0}\t date: {1}".format(symbol, fn_date))
+
+            records = get_historical_data(sec_id, fn_date)
+            if len(records) == 0:
+                historical_datas.append(historical_data)
+            else:
+                info("Exist record in table historical_data with stock: {0}\t date: {1}".format(symbol, fn_date))
+
+            # records = get_lastest_tick_data(sec_id, fn_date)
             # if len(records) == 0:
-            #     pass
-            historical_datas.append(historical_data)
-            daily_datas.append(daily_data)
-            lastest_tick_datas.append(lastest_tick_data)
+            #     insert_object(lastest_tick_data)
+            # else:
+            #     update_lastest_tick_data(sec_id, fn_date, price_close, deal_volume, datetime.datetime.now())
+
         insert_list_object(historical_datas)
         insert_list_object(daily_datas)
-        insert_list_object(lastest_tick_datas)
         if is_adj:
             process_update_daily_data(sec_id, symbol, '2008-01-01', end_date)
     except Exception as e:
@@ -145,7 +162,7 @@ def run():
             symbol = 'VNXALL'
         time.sleep(0.2)
 
-        records = get_last_daily_data(sec_id)
+        records = get_last_historical_data(sec_id)
         if len(records) == 0:
             last_date_record = datetime.datetime.strptime("2008-01-01", "%Y-%m-%d").date()
         else:
@@ -159,10 +176,3 @@ def run():
 
     print('Done!')
     signup.close()
-if __name__ == '__main__':
-    index = 0
-    while index < 100:
-        time.sleep(1)
-        with open("a.txt", 'a+') as f:
-            f.write(index)
-            f.write('\n')

@@ -8,13 +8,6 @@ import servicemanager
 import win32event
 import win32service
 
-import sys
-import os
-BASER_DIR = os.path.abspath(os.path.dirname(__file__))
-sys.path.append(BASER_DIR)
-DATABASE_DIR = os.path.join(BASER_DIR, "databases")
-sys.path.append(DATABASE_DIR)
-
 
 class SMWinservice(win32serviceutil.ServiceFramework):
     '''Base class to create winservice in Python'''
@@ -60,27 +53,20 @@ class SMWinservice(win32serviceutil.ServiceFramework):
         Override to add logic before the start
         eg. running condition
         '''
-        self.isrunning = True
 
     def stop(self):
         '''
         Override to add logic before the stop
         eg. invalidating running condition
         '''
-        self.isrunning = False
 
 
     def main(self):
-        i = 0
-        while self.isrunning and i < 10:
-            daily_data.test_run()
-            i = i + 1
+        # daily_data.run()
+        schedule.every().day.at("14:48").do(daily_data.run)
+        while True:
+            schedule.run_pending()
             time.sleep(1)
-        # crawl_historical_data.run()
-        # schedule.every().day.at("17:00").do(crawl_historical_data.run)
-        # while True:
-        #     schedule.run_pending()
-        #     time.sleep(1)
 
 
 

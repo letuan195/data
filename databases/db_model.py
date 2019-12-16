@@ -5,9 +5,6 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, String, Unicode, Integer, DateTime, BigInteger, Date, DECIMAL, VARCHAR, INT
 from sqlalchemy.dialects.mysql import DOUBLE, DATETIME, TINYINT
 
-BASER_DIR = os.path.abspath(os.path.dirname(__file__))
-sys.path.append(BASER_DIR)
-
 Base = declarative_base()
 ACCESS_FILE_PATH = os.path.dirname(os.path.abspath(__file__)) + '/access.txt'
 
@@ -21,19 +18,27 @@ class HistoricalData(Base):
     high = Column(DECIMAL(20, 4), nullable=True)
     low = Column(DECIMAL(20, 4), nullable=True)
     close = Column(DECIMAL(20, 4), nullable=True)
-    deal_volume = Column(DECIMAL(20, 0), nullable=True)
+    adj_close = Column(DECIMAL(20, 4), nullable=True)
+    adj_open = Column(DECIMAL(20, 4), nullable=True)
+    adj_low = Column(DECIMAL(20, 4), nullable=True)
+    adj_high = Column(DECIMAL(20, 4), nullable=True)
+    volume = Column(DECIMAL(20, 0), nullable=True)
     put_through_volume = Column(DECIMAL(20, 0), nullable=True)
     total_volume = Column(DECIMAL(20, 0), nullable=True)
-    last_update = Column(Date, nullable=False)
+    last_update = Column(DateTime, nullable=False)
 
-    def __init__(self, sec_id, date, open, high, low, close, deal_volume, put_through_volume, total_volume, last_update):
+    def __init__(self, sec_id, date, open, high, low, close, adj_open, adj_high, adj_low, adj_close, volume, put_through_volume, total_volume, last_update):
         self.sec_id = sec_id
         self.date = date
         self.open = open
         self.high = high
         self.low = low
         self.close = close
-        self.deal_volume = deal_volume
+        self.adj_close = adj_close
+        self.adj_open = adj_open
+        self.adj_low = adj_low
+        self.adj_high = adj_high
+        self.volume = volume
         self.put_through_volume = put_through_volume
         self.total_volume = total_volume
         self.last_update = last_update
@@ -248,6 +253,22 @@ class BusinessPlanData(Base):
         self.dividend_stock = dividend_stock
         self.dividend_money = dividend_money
 
+
+class LastestTickData(Base):
+    __tablename__ = 'lastest_tick_data'
+    id = Column(BigInteger, primary_key=True, autoincrement=True)
+    sec_id = Column(BigInteger, nullable=False)
+    trading_date = Column(Date, nullable=False)
+    trading_price = Column(DECIMAL(20, 0), nullable=True)
+    total_volume = Column(DECIMAL(20, 0), nullable=True)
+    last_update = Column(DateTime, nullable=False)
+
+    def __init__(self, sec_id, trading_date, trading_price, total_volume, last_update):
+        self.sec_id = sec_id
+        self.trading_date = trading_date
+        self.trading_price = trading_price
+        self.total_volume = total_volume
+        self.last_update = last_update
 
 def read_file_config():
     result = {}

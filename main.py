@@ -1,10 +1,16 @@
 import requests
 import json
 import time
-import os
 import datetime
 import schedule
 from login import Login
+
+import sys
+import os
+BASER_DIR = os.path.abspath(os.path.dirname(__file__))
+sys.path.append(BASER_DIR)
+DATABASE_DIR = os.path.join(BASER_DIR, "databases")
+sys.path.append(DATABASE_DIR)
 
 from databases.db_log import error, info
 from databases.db_session import get_last_daily_data, get_all_security, insert_list_object, insert_object, \
@@ -263,8 +269,19 @@ def run():
     for security in securities:
         symbol = security.name
         sec_id = security.id
+
+        info('processing for symbol: {0}'.format(symbol))
+
+        if sec_id == 1:
+            symbol = 'HASTC'
+        if sec_id == 2:
+            symbol = 'HNX30'
         if sec_id == 3:
             symbol = 'HOSTC'
+        if sec_id == 4:
+            symbol = 'VN30'
+        if sec_id == 6:
+            symbol = 'VNXALL'
         time.sleep(0.2)
 
         records = get_last_daily_data(sec_id)
