@@ -14,8 +14,8 @@ sys.path.append(DATABASE_DIR)
 
 from databases.db_log import error, info
 from databases.db_session import get_last_daily_data, get_all_security, insert_list_object, insert_object, \
-    check_record_quarterly, check_record_yearly, check_record_historical, check_record_daily
-from databases.db_session import check_record_business_plane, update_adj_price_data
+    get_yearly_data, get_quarterly_data, get_historical_data, get_daily_data
+from databases.db_session import get_business_plan, update_adj_price_data
 from databases.db_model import HistoricalData, DailyData, QuarterlyData, YearlyData, BusinessPlanData
 
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
@@ -103,23 +103,23 @@ def process_daily_data(sec_id, symbol, start_date, end_date):
                 continue
             fn_date = str(date)[:10]
 
-            records = check_record_daily(sec_id, fn_date)
+            records = get_daily_data(sec_id, fn_date)
             if len(records) > 0:
                 info("Exist daily_data record with date: %s" % fn_date)
                 continue
 
-            historical_data = HistoricalData(sec_id, fn_date, price_open, price_high, price_low, price_close,
-                                             deal_volume, put_through_volume, total_volume, datetime.date.today())
+            # historical_data = HistoricalData(sec_id, fn_date, price_open, price_high, price_low, price_close,
+            #                                  deal_volume, put_through_volume, total_volume, datetime.date.today())
             daily_data = DailyData(sec_id, fn_date, buy_quantity, sell_quantity, buy_foreign_quantity,
                                    sell_foreign_quantity,
                                    market_cap, state_ownership, foreign_ownership, other_ownership)
-            historical_datas.append(historical_data)
+            # historical_datas.append(historical_data)
             daily_datas.append(daily_data)
-        insert_list_object(historical_datas)
+        # insert_list_object(historical_datas)
         insert_list_object(daily_datas)
-        if is_adj:
-            process_update_daily_data(sec_id, symbol, '2008-01-01', end_date)
-        info('done process_daily_data: {0}'.format(symbol))
+        # if is_adj:
+        #     process_update_daily_data(sec_id, symbol, '2008-01-01', end_date)
+        # info('done process_daily_data: {0}'.format(symbol))
     except Exception as e:
         error('Exception %s' % str(e))
         error('process_daily_data: %s' % symbol)
@@ -133,7 +133,7 @@ def process_quarterly_data(sec_id, symbol, start_year, start_quarter, end_year, 
         data = json.loads(response.text)
         for year in range(start_year, end_year + 1):
             for quarter in range(start_quarter, end_quarter + 1):
-                records = check_record_quarterly(sec_id, year, quarter)
+                records = get_quarterly_data(sec_id, year, quarter)
                 if len(records) > 0:
                     continue
                 for item in data:
@@ -171,7 +171,7 @@ def process_quarterly_data(sec_id, symbol, start_year, start_quarter, end_year, 
                 elif quarter == 2:
                     temp_year = year - 1
                     temp_quarter = 4
-                records = check_record_quarterly(sec_id, temp_year, temp_quarter)
+                records = get_quarterly_data(sec_id, temp_year, temp_quarter)
                 if len(records) == 0:
                     data_db = QuarterlyData(sec_id, temp_year, temp_quarter, None, None, None, None, None, None, None,
                                             None, None, None, None, None, None, None)
@@ -189,7 +189,7 @@ def process_yearly_data(sec_id, symbol, start_year, end_year):
     try:
         data = json.loads(response.text)
         for year in range(start_year - 1, end_year):
-            records = check_record_yearly(sec_id, year)
+            records = get_yearly_data(sec_id, year)
             if len(records) > 0:
                 continue
             for item in data:
@@ -217,7 +217,7 @@ def process_yearly_data(sec_id, symbol, start_year, end_year):
                     insert_object(data_db)
                     break
             temp_year = year - 2
-            records = check_record_yearly(sec_id, temp_year)
+            records = get_yearly_data(sec_id, temp_year)
             if len(records) == 0:
                 data_db = YearlyData(sec_id, temp_year, None, None, None, None, None, None, None, None, None, None,
                                      None, None, None, None)
@@ -243,7 +243,7 @@ def process_business_plan_data(sec_id, symbol):
             net_income_crawl = item.get('Netlncome')
             dividend_stock_crawl = item.get('DivStock')
             dividend_money_crawl = item.get('Dividend')
-            records = check_record_business_plane(sec_id, year_crawl)
+            records = get_business_plan(sec_id, year_crawl)
             if len(records) == 0:
                 x = 1000000000
                 business = BusinessPlanData(sec_id, year_crawl, total_income_crawl * x, profit_crawl * x,
