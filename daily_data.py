@@ -142,7 +142,7 @@ def run():
     headers['RequestVerificationToken'] = token
 
     today = datetime.date.today()
-    print('Update data at: ', str(today))
+    print('Date: ', str(today))
     securities = get_all_security()
     for security in securities:
         symbol = security.name

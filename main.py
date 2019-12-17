@@ -13,10 +13,11 @@ DATABASE_DIR = os.path.join(BASER_DIR, "databases")
 sys.path.append(DATABASE_DIR)
 
 from databases.db_log import error, info
-from databases.db_session import get_last_daily_data, get_all_security, insert_list_object, insert_object, \
-    get_yearly_data, get_quarterly_data, get_historical_data, get_daily_data
-from databases.db_session import get_business_plan, update_adj_price_data
-from databases.db_model import HistoricalData, DailyData, QuarterlyData, YearlyData, BusinessPlanData
+from databases.db_session import get_yearly_data, get_quarterly_data, get_business_plan
+from databases.db_session import get_last_daily_data, get_all_security, get_historical_data, get_daily_data, get_lastest_tick_data
+from databases.db_session import insert_list_object, insert_object
+from databases.db_session import update_adj_price_data, update_lastest_tick_data
+from databases.db_model import HistoricalData, DailyData, QuarterlyData, YearlyData, BusinessPlanData, LastestTickData
 
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 
@@ -57,7 +58,6 @@ def process_update_daily_data(sec_id, symbol, start_date, end_date):
             high = item.get("High")
             low = item.get("Low")
             update_adj_price_data(sec_id, fn_date, close, open, high, low)
-        info('done process_update_daily_data: {0}'.format(symbol))
     except Exception as e:
         error('error info: %s' % str(e))
         error('error at process_update_daily_data: %s' % symbol)
@@ -82,6 +82,9 @@ def process_daily_data(sec_id, symbol, start_date, end_date):
             price_low = item.get("PriceLow")
             price_close = item.get("PriceClose")
             adj_close = item.get("AdjClose")
+            adj_open = item.get("AdjOpen")
+            adj_high = item.get("AdjHigh")
+            adj_low = item.get("AdjLow")
 
             if adj_close != price_close:
                 is_adj = True
@@ -103,23 +106,35 @@ def process_daily_data(sec_id, symbol, start_date, end_date):
                 continue
             fn_date = str(date)[:10]
 
-            records = get_daily_data(sec_id, fn_date)
-            if len(records) > 0:
-                info("Exist daily_data record with date: %s" % fn_date)
-                continue
-
-            # historical_data = HistoricalData(sec_id, fn_date, price_open, price_high, price_low, price_close,
-            #                                  deal_volume, put_through_volume, total_volume, datetime.date.today())
+            historical_data = HistoricalData(sec_id, fn_date, price_open, price_high, price_low, price_close, adj_open, adj_high, adj_low, adj_close,
+                                             deal_volume, put_through_volume, total_volume, datetime.datetime.now())
             daily_data = DailyData(sec_id, fn_date, buy_quantity, sell_quantity, buy_foreign_quantity,
                                    sell_foreign_quantity,
                                    market_cap, state_ownership, foreign_ownership, other_ownership)
-            # historical_datas.append(historical_data)
-            daily_datas.append(daily_data)
-        # insert_list_object(historical_datas)
+            lastest_tick_data = LastestTickData(sec_id, fn_date, price_close / 1000, deal_volume, datetime.datetime.now())
+
+            records = get_daily_data(sec_id, fn_date)
+            if len(records) == 0:
+                daily_datas.append(daily_data)
+            else:
+                info("Exist record in table daily_data with stock: {0}\t date: {1}".format(symbol, fn_date))
+
+            records = get_historical_data(sec_id, fn_date)
+            if len(records) == 0:
+                historical_datas.append(historical_data)
+            else:
+                info("Exist record in table historical_data with stock: {0}\t date: {1}".format(symbol, fn_date))
+
+            records = get_lastest_tick_data(sec_id, fn_date)
+            if len(records) == 0:
+                insert_object(lastest_tick_data)
+            else:
+                update_lastest_tick_data(sec_id, fn_date, price_close, deal_volume, datetime.datetime.now())
+
+        insert_list_object(historical_datas)
         insert_list_object(daily_datas)
-        # if is_adj:
-        #     process_update_daily_data(sec_id, symbol, '2008-01-01', end_date)
-        # info('done process_daily_data: {0}'.format(symbol))
+        if is_adj:
+            process_update_daily_data(sec_id, symbol, '2008-01-01', end_date)
     except Exception as e:
         error('Exception %s' % str(e))
         error('process_daily_data: %s' % symbol)
@@ -264,7 +279,7 @@ def run():
     headers['RequestVerificationToken'] = token
 
     today = datetime.date.today()
-    print('Update data at: ', str(today))
+    print('Date: ', str(today))
     securities = get_all_security()
     for security in securities:
         symbol = security.name
@@ -313,7 +328,3 @@ def run():
 
 if __name__ == '__main__':
     run()
-    # schedule.every().day.at("17:00").do(run)
-    # while True:
-    #     schedule.run_pending()
-    #     time.sleep(1)
