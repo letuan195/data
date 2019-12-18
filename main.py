@@ -309,6 +309,8 @@ def run():
         next_day = last_date_record + datetime.timedelta(days=1)
         start_date = str(next_day)
         end_date = str(today)
+        if end_date < start_date:
+            continue
         process_daily_data(sec_id, symbol, start_date, end_date)
 
         end_year = int(today.year)
