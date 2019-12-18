@@ -111,7 +111,7 @@ def process_daily_data(sec_id, symbol, start_date, end_date):
             daily_data = DailyData(sec_id, fn_date, buy_quantity, sell_quantity, buy_foreign_quantity,
                                    sell_foreign_quantity,
                                    market_cap, state_ownership, foreign_ownership, other_ownership)
-            lastest_tick_data = LastestTickData(sec_id, fn_date, price_close / 1000, deal_volume, datetime.datetime.now())
+            # lastest_tick_data = LastestTickData(sec_id, fn_date, price_close / 1000, deal_volume, datetime.datetime.now())
 
             records = get_daily_data(sec_id, fn_date)
             if len(records) == 0:
@@ -125,11 +125,11 @@ def process_daily_data(sec_id, symbol, start_date, end_date):
             else:
                 info("Exist record in table historical_data with stock: {0}\t date: {1}".format(symbol, fn_date))
 
-            records = get_lastest_tick_data(sec_id, fn_date)
-            if len(records) == 0:
-                insert_object(lastest_tick_data)
-            else:
-                update_lastest_tick_data(sec_id, fn_date, price_close, deal_volume, datetime.datetime.now())
+            # records = get_lastest_tick_data(sec_id, fn_date)
+            # if len(records) == 0:
+            #     insert_object(lastest_tick_data)
+            # else:
+            #     update_lastest_tick_data(sec_id, fn_date, price_close / 1000, deal_volume, datetime.datetime.now())
 
         insert_list_object(historical_datas)
         insert_list_object(daily_datas)
@@ -191,7 +191,6 @@ def process_quarterly_data(sec_id, symbol, start_year, start_quarter, end_year, 
                     data_db = QuarterlyData(sec_id, temp_year, temp_quarter, None, None, None, None, None, None, None,
                                             None, None, None, None, None, None, None)
                     insert_object(data_db)
-        info('done process_quarterly_data: {0}'.format(symbol))
     except Exception as e:
         error('Exception %s' % str(e))
         error('process_quarterly_data: %s' % symbol)
@@ -237,7 +236,6 @@ def process_yearly_data(sec_id, symbol, start_year, end_year):
                 data_db = YearlyData(sec_id, temp_year, None, None, None, None, None, None, None, None, None, None,
                                      None, None, None, None)
                 insert_object(data_db)
-        info('done process_yearly_data: {0}'.format(symbol))
     except Exception as e:
         error('Exception %s' % str(e))
         error('process_yearly_data: %s' % symbol)
@@ -264,7 +262,6 @@ def process_business_plan_data(sec_id, symbol):
                 business = BusinessPlanData(sec_id, year_crawl, total_income_crawl * x, profit_crawl * x,
                                             net_income_crawl * x, dividend_stock_crawl, dividend_money_crawl)
                 insert_object(business)
-        info('done process_business_plan_data: {0}'.format(symbol))
     except Exception as e:
         error('Exception %s' % str(e))
         error('process_business_plan_data: %s' % symbol)
