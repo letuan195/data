@@ -64,7 +64,7 @@ def process_update_daily_data(sec_id, symbol, start_date, end_date):
         error('========================***========================')
 
 
-def process_daily_data(sec_id, symbol, start_date, end_date):
+def process_daily_data(sec_id, symbol, group_type, start_date, end_date):
     path = URL_DAILY_DATA_BASE.format(symbol, start_date, end_date)
     path_inventory = URL_INVENTORY_BASE.format(symbol)
     response = requests.get(path, headers=headers)
@@ -111,7 +111,11 @@ def process_daily_data(sec_id, symbol, start_date, end_date):
             daily_data = DailyData(sec_id, fn_date, buy_quantity, sell_quantity, buy_foreign_quantity,
                                    sell_foreign_quantity,
                                    market_cap, state_ownership, foreign_ownership, other_ownership)
-            # lastest_tick_data = LastestTickData(sec_id, fn_date, price_close / 1000, deal_volume, datetime.datetime.now())
+            if group_type == 1:
+                trade_price = price_close
+            else:
+                trade_price = price_close / 1000
+            lastest_tick_data = LastestTickData(sec_id, fn_date, trade_price, deal_volume, datetime.datetime.now())
 
             records = get_daily_data(sec_id, fn_date)
             if len(records) == 0:
@@ -125,11 +129,11 @@ def process_daily_data(sec_id, symbol, start_date, end_date):
             else:
                 info("Exist record in table historical_data with stock: {0}\t date: {1}".format(symbol, fn_date))
 
-            # records = get_lastest_tick_data(sec_id, fn_date)
-            # if len(records) == 0:
-            #     insert_object(lastest_tick_data)
-            # else:
-            #     update_lastest_tick_data(sec_id, fn_date, price_close / 1000, deal_volume, datetime.datetime.now())
+            records = get_lastest_tick_data(sec_id, fn_date)
+            if len(records) == 0:
+                insert_object(lastest_tick_data)
+            else:
+                update_lastest_tick_data(sec_id, fn_date, trade_price, deal_volume, datetime.datetime.now())
 
         insert_list_object(historical_datas)
         insert_list_object(daily_datas)
@@ -281,6 +285,7 @@ def run():
     for security in securities:
         symbol = security.name
         sec_id = security.id
+        group_type = security.group_type
 
         info('processing for symbol: {0}'.format(symbol))
 
@@ -311,7 +316,7 @@ def run():
         end_date = str(today)
         if end_date < start_date:
             continue
-        process_daily_data(sec_id, symbol, start_date, end_date)
+        process_daily_data(sec_id, symbol, group_type, start_date, end_date)
 
         end_year = int(today.year)
         end_quarter = 4

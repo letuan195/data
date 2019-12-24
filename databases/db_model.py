@@ -259,15 +259,15 @@ class LastestTickData(Base):
     id = Column(BigInteger, primary_key=True, autoincrement=True)
     sec_id = Column(BigInteger, nullable=False)
     trading_date = Column(Date, nullable=False)
-    trading_price = Column(DECIMAL(20, 0), nullable=True)
-    total_volume = Column(DECIMAL(20, 0), nullable=True)
+    trade_price = Column(DECIMAL(20, 0), nullable=True)
+    total_vol = Column(DECIMAL(20, 0), nullable=True)
     last_update = Column(DateTime, nullable=False)
 
-    def __init__(self, sec_id, trading_date, trading_price, total_volume, last_update):
+    def __init__(self, sec_id, trading_date, trade_price, total_vol, last_update):
         self.sec_id = sec_id
         self.trading_date = trading_date
-        self.trading_price = trading_price
-        self.total_volume = total_volume
+        self.trade_price = trade_price
+        self.total_vol = total_vol
         self.last_update = last_update
 
 def read_file_config():

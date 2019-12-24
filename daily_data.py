@@ -101,7 +101,12 @@ def process_daily_data(sec_id, symbol, start_date, end_date):
             daily_data = DailyData(sec_id, fn_date, buy_quantity, sell_quantity, buy_foreign_quantity,
                                    sell_foreign_quantity,
                                    market_cap, state_ownership, foreign_ownership, other_ownership)
-            lastest_tick_data = LastestTickData(sec_id, fn_date, price_close / 1000, deal_volume, datetime.datetime.now())
+
+            if len(symbol) == 3:
+                trading_price = price_close / 1000
+            else:
+                trading_price = price_close
+            lastest_tick_data = LastestTickData(sec_id, fn_date, trading_price, deal_volume, datetime.datetime.now())
 
             records = get_daily_data(sec_id, fn_date)
             if len(records) == 0:

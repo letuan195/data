@@ -199,13 +199,13 @@ def update_adj_price_data(sec_id, date, close, price_open, high, low):
         session.close()
 
 
-def update_lastest_tick_data(sec_id, trading_date, trading_price, total_volume, last_update):
+def update_lastest_tick_data(sec_id, trading_date, trade_price, total_volume, last_update):
     session = DBSession()
     try:
         session.query(LastestTickData) \
             .filter(LastestTickData.sec_id == sec_id) \
             .filter(LastestTickData.trading_date == trading_date). \
-            update({"trading_price": trading_price, "total_volume": total_volume, "last_update": last_update})
+            update({"trade_price": trade_price, "total_vol": total_volume, "last_update": last_update})
         session.commit()
     except Exception as e:
         error('error at update_lastest_tick_data object')
