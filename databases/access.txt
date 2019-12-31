@@ -1,4 +1,4 @@
-user:root
-password:tuan1412
-database:algo_trading_data
+user:greenstock
+password:Abc123456
+database:greenstock
 host:localhost
