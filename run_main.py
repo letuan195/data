@@ -1,4 +1,5 @@
 import time
+import datetime
 import schedule
 import main
 
@@ -7,6 +8,15 @@ import win32serviceutil
 import servicemanager
 import win32event
 import win32service
+
+import sys
+import os
+BASER_DIR = os.path.abspath(os.path.dirname(__file__))
+sys.path.append(BASER_DIR)
+DATABASE_DIR = os.path.join(BASER_DIR, "databases")
+sys.path.append(DATABASE_DIR)
+
+from databases.db_log import error
 
 
 class SMWinservice(win32serviceutil.ServiceFramework):
@@ -59,7 +69,7 @@ class SMWinservice(win32serviceutil.ServiceFramework):
         Override to add logic before the stop
         eg. invalidating running condition
         '''
-
+        error("Service is being stopped at: {0}".format(datetime.datetime.now()))
 
     def main(self):
         # daily_data.run()

@@ -27,10 +27,13 @@ headers = {
     "Sec-Fetch-Mode": "cors",
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36",
 }
-URL_DAILY_DATA_BASE = 'https://svr4.fireant.vn/api/Data/Companies/HistoricalQuotes?symbol={0}&startDate={1}&endDate={2}'
-URL_DAILY_DATA_ADJ_BASE = 'https://svr4.fireant.vn/api/Data/Markets/HistoricalQuotes?symbol={0}&startDate={1}&endDate={2}'
+# URL_DAILY_DATA_BASE = 'https://svr4.fireant.vn/api/Data/Companies/HistoricalQuotes?symbol={0}&startDate={1}&endDate={2}'
+# URL_DAILY_DATA_ADJ_BASE = 'https://svr4.fireant.vn/api/Data/Markets/HistoricalQuotes?symbol={0}&startDate={1}&endDate={2}'
 
-URL_INVENTORY_BASE = 'https://svr1.fireant.vn/api/Data/Companies/CompanyInfo?symbol={0}'
+URL_DAILY_DATA_BASE = 'https://svr2.fireant.vn/api/Data/Companies/HistoricalQuotes?symbol={0}&startDate={1}&endDate={2}'
+URL_DAILY_DATA_ADJ_BASE = 'https://svr1.fireant.vn/api/Data/Markets/HistoricalQuotes?symbol={0}&startDate={1}&endDate={2}'
+
+URL_INVENTORY_BASE = 'https://svr2.fireant.vn/api/Data/Companies/CompanyInfo?symbol={0}'
 
 def process_update_daily_data(sec_id, symbol, start_date, end_date):
     path = URL_DAILY_DATA_ADJ_BASE.format(symbol, start_date, end_date)
@@ -54,7 +57,7 @@ def process_update_daily_data(sec_id, symbol, start_date, end_date):
         error('========================***========================')
 
 
-def process_daily_data(sec_id, symbol, start_date, end_date):
+def process_daily_data(sec_id, symbol, group_type, start_date, end_date):
     path = URL_DAILY_DATA_BASE.format(symbol, start_date, end_date)
     path_inventory = URL_INVENTORY_BASE.format(symbol)
     response = requests.get(path, headers=headers)
@@ -102,11 +105,11 @@ def process_daily_data(sec_id, symbol, start_date, end_date):
                                    sell_foreign_quantity,
                                    market_cap, state_ownership, foreign_ownership, other_ownership)
 
-            if len(symbol) == 3:
-                trading_price = price_close / 1000
+            if group_type == 1:
+                trade_price = price_close
             else:
-                trading_price = price_close
-            lastest_tick_data = LastestTickData(sec_id, fn_date, trading_price, deal_volume, datetime.datetime.now())
+                trade_price = price_close / 1000
+            lastest_tick_data = LastestTickData(sec_id, fn_date, trade_price, deal_volume, datetime.datetime.now())
 
             records = get_daily_data(sec_id, fn_date)
             if len(records) == 0:
@@ -124,7 +127,7 @@ def process_daily_data(sec_id, symbol, start_date, end_date):
             if len(records) == 0:
                 insert_object(lastest_tick_data)
             else:
-                update_lastest_tick_data(sec_id, fn_date, price_close, deal_volume, datetime.datetime.now())
+                update_lastest_tick_data(sec_id, fn_date, trade_price, deal_volume, datetime.datetime.now())
 
         insert_list_object(historical_datas)
         insert_list_object(daily_datas)
@@ -135,9 +138,6 @@ def process_daily_data(sec_id, symbol, start_date, end_date):
         error('process_daily_data: %s' % symbol)
         error('========================***========================')
 
-def test_run():
-    with open('C:\\TestService.log', 'a+') as f:
-        f.write('test service running...\n')
 
 def run():
     signup = Login()
@@ -152,7 +152,9 @@ def run():
     for security in securities:
         symbol = security.name
         sec_id = security.id
-
+        if sec_id < 1439:
+            continue
+        group_type = security.group_type
         info('processing for symbol: {0}'.format(symbol))
 
         if sec_id == 1:
@@ -167,16 +169,16 @@ def run():
             symbol = 'VNXALL'
         time.sleep(0.2)
 
-        records = get_last_daily_data(sec_id)
-        if len(records) == 0:
-            last_date_record = datetime.datetime.strptime("2008-01-01", "%Y-%m-%d").date()
-        else:
-            last_date_record = records[0].date
-
-        next_day = last_date_record + datetime.timedelta(days=1)
-        start_date = str(next_day)
-        end_date = str(today)
-        process_daily_data(sec_id, symbol, start_date, end_date)
+        # records = get_last_daily_data(sec_id)
+        # if len(records) == 0:
+        #     last_date_record = datetime.datetime.strptime("2008-01-01", "%Y-%m-%d").date()
+        # else:
+        #     last_date_record = records[0].date
+        # start_date = datetime.datetime.strptime("2000-01-01", "%Y-%m-%d").date()
+        # next_day = last_date_record + datetime.timedelta(days=1)
+        start_date = "2000-01-01"
+        end_date = "2008-01-01"
+        process_daily_data(sec_id, symbol, group_type, start_date, end_date)
 
 
     print('Done!')

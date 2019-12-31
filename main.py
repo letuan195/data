@@ -29,13 +29,13 @@ headers = {
     "Sec-Fetch-Mode": "cors",
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36",
 }
-URL_DAILY_DATA_BASE = 'https://svr4.fireant.vn/api/Data/Companies/HistoricalQuotes?symbol={0}&startDate={1}&endDate={2}'
-URL_DAILY_DATA_ADJ_BASE = 'https://svr4.fireant.vn/api/Data/Markets/HistoricalQuotes?symbol={0}&startDate={1}&endDate={2}'
+URL_DAILY_DATA_BASE = 'https://svr2.fireant.vn/api/Data/Companies/HistoricalQuotes?symbol={0}&startDate={1}&endDate={2}'
+URL_DAILY_DATA_ADJ_BASE = 'https://svr1.fireant.vn/api/Data/Markets/HistoricalQuotes?symbol={0}&startDate={1}&endDate={2}'
 
-URL_BASE_QUARTER = 'https://svr4.fireant.vn/api/Data/Finance/QuarterlyFinancialInfo?symbol={0}&fromYear={1}&fromQuarter={2}&toYear={3}&toQuarter={4}'
-URL_BASE_YEAR = 'https://svr4.fireant.vn/api/Data/Finance/YearlyFinancialInfo?symbol={0}&fromYear={1}&toYear={2}'
+URL_BASE_QUARTER = 'https://svr2.fireant.vn/api/Data/Finance/QuarterlyFinancialInfo?symbol={0}&fromYear={1}&fromQuarter={2}&toYear={3}&toQuarter={4}'
+URL_BASE_YEAR = 'https://svr2.fireant.vn/api/Data/Finance/YearlyFinancialInfo?symbol={0}&fromYear={1}&toYear={2}'
 
-URL_INVENTORY_BASE = 'https://svr1.fireant.vn/api/Data/Companies/CompanyInfo?symbol={0}'
+URL_INVENTORY_BASE = 'https://svr2.fireant.vn/api/Data/Companies/CompanyInfo?symbol={0}'
 
 URL_BUSINESS_PLAN_BASE = 'http://e.cafef.vn/khkd.ashx?symbol={0}'
 
