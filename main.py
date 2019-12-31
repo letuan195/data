@@ -138,7 +138,7 @@ def process_daily_data(sec_id, symbol, group_type, start_date, end_date):
         insert_list_object(historical_datas)
         insert_list_object(daily_datas)
         if is_adj:
-            process_update_daily_data(sec_id, symbol, '2008-01-01', end_date)
+            process_update_daily_data(sec_id, symbol, '2000-01-01', end_date)
     except Exception as e:
         error('Exception %s' % str(e))
         error('process_daily_data: %s' % symbol)
@@ -303,8 +303,8 @@ def run():
 
         records = get_last_daily_data(sec_id)
         if len(records) == 0:
-            last_date_record = datetime.datetime.strptime("2008-01-01", "%Y-%m-%d").date()
-            start_year = 2008
+            last_date_record = datetime.datetime.strptime("2000-01-01", "%Y-%m-%d").date()
+            start_year = 2000
             start_quarter = 1
         else:
             last_date_record = records[0].date
