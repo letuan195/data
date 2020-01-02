@@ -44,8 +44,8 @@ URL_BUSINESS_PLAN_BASE = 'http://e.cafef.vn/khkd.ashx?symbol={0}'
 
 def process_update_daily_data(sec_id, symbol, start_date, end_date):
     path = URL_DAILY_DATA_ADJ_BASE.format(symbol, start_date, end_date)
-    response = requests.get(path, headers=headers)
     try:
+        response = requests.get(path, headers=headers)
         data = json.loads(response.text)
         for item in data:
             date = item.get("Date")
@@ -67,9 +67,9 @@ def process_update_daily_data(sec_id, symbol, start_date, end_date):
 def process_daily_data(sec_id, symbol, group_type, start_date, end_date):
     path = URL_DAILY_DATA_BASE.format(symbol, start_date, end_date)
     path_inventory = URL_INVENTORY_BASE.format(symbol)
-    response = requests.get(path, headers=headers)
-    response_inventory = requests.get(path_inventory, headers=headers)
     try:
+        response = requests.get(path, headers=headers)
+        response_inventory = requests.get(path_inventory, headers=headers)
         data = json.loads(response.text)
         data_inventory = json.loads(response_inventory.text)
         historical_datas = []
@@ -147,8 +147,8 @@ def process_daily_data(sec_id, symbol, group_type, start_date, end_date):
 
 def process_quarterly_data(sec_id, symbol, start_year, start_quarter, end_year, end_quarter):
     path = URL_BASE_QUARTER.format(symbol, start_year, start_quarter, end_year, end_quarter)
-    response = requests.get(path, headers=headers)
     try:
+        response = requests.get(path, headers=headers)
         data = json.loads(response.text)
         for year in range(start_year, end_year + 1):
             for quarter in range(start_quarter, end_quarter + 1):
@@ -203,8 +203,8 @@ def process_quarterly_data(sec_id, symbol, start_year, start_quarter, end_year, 
 
 def process_yearly_data(sec_id, symbol, start_year, end_year):
     path = URL_BASE_YEAR.format(symbol, start_year, end_year)
-    response = requests.get(path, headers=headers)
     try:
+        response = requests.get(path, headers=headers)
         data = json.loads(response.text)
         for year in range(start_year - 1, end_year):
             records = get_yearly_data(sec_id, year)
@@ -248,8 +248,18 @@ def process_yearly_data(sec_id, symbol, start_year, end_year):
 
 def process_business_plan_data(sec_id, symbol):
     path = URL_BUSINESS_PLAN_BASE.format(symbol)
-    response = requests.get(path)
+    headers = {
+        "Accept": "application/json, text/javascript, */*; q=0.01",
+        "Accept - Encoding": "gzip, deflate",
+        "Accept - Language": "en - US, en;q = 0.9, vi;q = 0.8",
+        "Connection": "keep - alive",
+        "Host": "e.cafef.vn",
+        "Origin": "http://s.cafef.vn",
+        "Referer": "http://s.cafef.vn",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36",
+    }
     try:
+        response = requests.get(path, headers=headers)
         data = json.loads(response.text)
         if data is None:
             return
