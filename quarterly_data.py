@@ -141,8 +141,18 @@ def process_yearly_data(sec_id, symbol, start_year, end_year):
 
 def process_business_plan_data(sec_id, symbol):
     path = URL_BUSINESS_PLAN_BASE.format(symbol)
-    response = requests.get(path)
+    headers = {
+        "Accept": "application/json, text/javascript, */*; q=0.01",
+        "Accept-Encoding": "gzip, deflate",
+        "Accept-Language": "en - US, en;q = 0.9, vi;q = 0.8",
+        "Connection": "keep-alive",
+        "Host": "e.cafef.vn",
+        "Origin": "http://s.cafef.vn",
+        "Referer": "http://s.cafef.vn",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36",
+    }
     try:
+        response = requests.get(path, headers=headers)
         data = json.loads(response.text)
         if data is None:
             return
@@ -159,11 +169,20 @@ def process_business_plan_data(sec_id, symbol):
                 business = BusinessPlanData(sec_id, year_crawl, total_income_crawl * x, profit_crawl * x,
                                             net_income_crawl * x, dividend_stock_crawl, dividend_money_crawl)
                 insert_object(business)
-        info('done process_business_plan_data: {0}'.format(symbol))
     except Exception as e:
         error('Exception %s' % str(e))
         error('process_business_plan_data: %s' % symbol)
         error('========================***========================')
+
+def test_plan():
+    securities = get_all_security()
+    for security in securities:
+        symbol = security.name
+        sec_id = security.id
+        info('processing for symbol: {0}'.format(symbol))
+        process_business_plan_data(sec_id, symbol)
+
+    print('Done!')
 
 def run():
     signup = Login()
@@ -214,4 +233,5 @@ def run():
     signup.close()
 
 if __name__ == '__main__':
-    run()
+    # run()
+    test_plan()
