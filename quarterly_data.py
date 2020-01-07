@@ -36,13 +36,13 @@ URL_INVENTORY_BASE = 'https://svr1.fireant.vn/api/Data/Companies/CompanyInfo?sym
 
 URL_BUSINESS_PLAN_BASE = 'http://e.cafef.vn/khkd.ashx?symbol={0}'
 
-def process_quarterly_data(sec_id, symbol, start_year, start_quarter, end_year, end_quarter):
-    path = URL_BASE_QUARTER.format(symbol, start_year, start_quarter, end_year, end_quarter)
+def process_quarterly_data(sec_id, symbol, start_year, end_year):
+    path = URL_BASE_QUARTER.format(symbol, start_year - 1, 1, end_year, 4)
     response = requests.get(path, headers=headers)
     try:
         data = json.loads(response.text)
-        for year in range(start_year, end_year + 1):
-            for quarter in range(start_quarter, end_quarter + 1):
+        for year in range(start_year - 1, end_year + 1):
+            for quarter in range(1, 5):
                 records = get_quarterly_data(sec_id, year, quarter)
                 if len(records) > 0:
                     continue
@@ -73,19 +73,6 @@ def process_quarterly_data(sec_id, symbol, start_year, start_quarter, end_year, 
                         insert_object(data_db)
                         break
 
-                temp_year = year
-                temp_quarter = quarter - 2
-                if quarter == 1:
-                    temp_year = year - 1
-                    temp_quarter = 3
-                elif quarter == 2:
-                    temp_year = year - 1
-                    temp_quarter = 4
-                records = get_quarterly_data(sec_id, temp_year, temp_quarter)
-                if len(records) == 0:
-                    data_db = QuarterlyData(sec_id, temp_year, temp_quarter, None, None, None, None, None, None, None,
-                                            None, None, None, None, None, None, None)
-                    insert_object(data_db)
         info('done process_quarterly_data: {0}'.format(symbol))
     except Exception as e:
         error('Exception %s' % str(e))
@@ -94,11 +81,11 @@ def process_quarterly_data(sec_id, symbol, start_year, start_quarter, end_year, 
 
 
 def process_yearly_data(sec_id, symbol, start_year, end_year):
-    path = URL_BASE_YEAR.format(symbol, start_year, end_year)
+    path = URL_BASE_YEAR.format(symbol, start_year + 1, end_year)
     response = requests.get(path, headers=headers)
     try:
         data = json.loads(response.text)
-        for year in range(start_year - 1, end_year):
+        for year in range(start_year + 1, end_year):
             records = get_yearly_data(sec_id, year)
             if len(records) > 0:
                 continue
@@ -126,12 +113,6 @@ def process_yearly_data(sec_id, symbol, start_year, end_year):
                                          sales_per_share_crawl)
                     insert_object(data_db)
                     break
-            temp_year = year - 2
-            records = get_yearly_data(sec_id, temp_year)
-            if len(records) == 0:
-                data_db = YearlyData(sec_id, temp_year, None, None, None, None, None, None, None, None, None, None,
-                                     None, None, None, None)
-                insert_object(data_db)
         info('done process_yearly_data: {0}'.format(symbol))
     except Exception as e:
         error('Exception %s' % str(e))
@@ -214,16 +195,13 @@ def run():
 
         records = get_last_daily_data(sec_id)
         if len(records) == 0:
-            start_year = 2008
-            start_quarter = 1
+            start_year = 2000
         else:
             last_date_record = records[0].date
             start_year = int(last_date_record.year)
-            start_quarter = int((last_date_record.month - 1) / 3) + 1
         end_year = int(today.year)
-        end_quarter = 4
         for year in range(start_year, end_year + 1):
-            process_quarterly_data(sec_id, symbol, year, start_quarter, year, end_quarter)
+            process_quarterly_data(sec_id, symbol, year, year)
 
         process_yearly_data(sec_id, symbol, start_year, end_year)
         process_business_plan_data(sec_id, symbol)
